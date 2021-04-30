@@ -1,5 +1,4 @@
 # 코드 레벨업
---
 
 ## JavaScript
 - JS는 onload 깔고 가는게 편하다.
