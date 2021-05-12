@@ -13,7 +13,7 @@
 ## Java
 - Vo는 필요에 맞게 쪼개 쓰기
 - 모든 Req, Res를 Vo로 쓰려고 고집하기 보다는 적당히 변수(ex: int, String...)로 요청하고 받는게 가독성이 좋은 듯
-- DB result는 String으로 받는게 편함 int로 받으면 null을 받아야 될 것 같은 경우에 0을 받음..
+- DB result는 String으로 받는게 편함 int로 받으면 null을 받아야 될 것 같은 경우에 0을 받음../mybatis int 결과 null로 받고 싶으면 Integer쓰면 됨
 
 ## DB
 - WHERE 1=1 넣어주면 동적 쿼리 추가 및 코드 정리가 편하다.
