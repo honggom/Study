@@ -22,3 +22,6 @@
 - for문 사용팁
 
 ![arr](https://user-images.githubusercontent.com/67107008/117932069-ebc58e80-b33a-11eb-8f73-319efef09f15.PNG)
+
+## 알고리즘
+- 노트에 경우의 수를 적어보며 규칙을 찾아본다.
