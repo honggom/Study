@@ -1,0 +1,111 @@
+#include stdio.h
+#include stdlib.h
+#include string.h
+
+#define MAX_SIZE_STACK 100
+#define FALSE 0
+#define TRUE 0
+
+ 중위 표기법을 후위 표기법으로 변환한다
+ 피연산자는 무조건 출력한다
+ 연산자의 경우에는 우선순위에 따라 결정한다
+
+typedef int element;
+typedef struct {
+    element stack[MAX_SIZE_STACK];
+    int top;
+}StackType;
+
+void init(StackType s) {
+    s-top = -1;
+}
+
+int is_empty(StackType s) {
+    return s-top == -1;
+}
+
+int is_full(StackType s){
+    return s-top == MAX_SIZE_STACK-1;
+}
+
+void push(StackType s, element item){
+    if (is_full(s))
+        exit(1);
+    s-stack[++(s-top)] = item;
+}
+
+element pop(StackType s){
+    if (is_empty(s))
+        exit(1) ;
+    return s-stack[(s-top)--];
+}
+
+element peek(StackType s){
+    if (is_empty(s))
+        exit(1);
+    return s-stack[s-top];
+}
+
+ 우선순위 반환 메서드
+int prec(char op){
+    switch (op) {
+        case '(' case ')' return 0;
+        case '+' case '-' return 1;
+        case '' case '' return 2;
+    }
+    return -1;
+}
+
+void infix_to_postfix(char exp[]){
+    int i;
+    char ch, top_op;
+    int len = (int) strlen(exp);
+    
+    StackType s;
+    init(&s);
+    
+    for (i=0; ilen; i++) {
+        ch = (int) exp[i];
+        
+        switch (ch) {
+             연산자일 경우
+            case '+' case '-' case '' case ''
+                 자신보다 우선 순위가 높은 것이
+                 Stack에 계실 경우 어서 빼드린다
+                while (!is_empty(&s) && prec(peek(&s)) = prec(ch)) {
+                    top_op = pop(&s);
+                    printf(%c , top_op);
+                }
+                push(&s, ch);
+                break;
+                
+             괄호의 경우
+            case '('
+                push(&s, ch);
+                break;
+            case ')'
+                top_op = pop(&s);
+                while (top_op != '(') {
+                    printf(%c , top_op);
+                    top_op = pop(&s);
+                }
+                break;
+                
+             피연산자일 경우
+            default
+                printf(%c ,ch);
+                break;
+        }
+    }
+    
+    while (!is_empty(&s)) {
+        printf(%c ,pop(&s));
+    }
+}
+
+int main(){
+     ab+c - abc+
+    infix_to_postfix(A(B+C)D-P));
+    printf(n);
+    return 0;
+}
