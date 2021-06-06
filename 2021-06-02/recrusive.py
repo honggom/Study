@@ -1,14 +1,14 @@
 # 재귀 함수
-def re(data):
+def recrusive(data):
     if data < 0:
         print("ended")
     else:
         print(data)
-        re(data-1)
+        recrusive(data-1)
         print("returned", data)
 
 
-re(4)
+recrusive(4)
 
 '''
 결과 : 
