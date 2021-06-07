@@ -10,11 +10,12 @@
 - JS는 onload 깔고 가는게 편하다.
 - 코드 영역 나누기 > 1. 변수 2. 함수 3. 이벤트 4. 동작코드
 - 콜백 함수의 정의 :
+  - 어떤 이벤트에 의해 호출되어지는 함수 ex) click keyup ..
   - 다른 함수의 인자로써 사용되는 함수
   
 ![캡처](https://user-images.githubusercontent.com/67107008/120966888-d1e46380-c7a1-11eb-801e-16dea1793fa7.PNG)
 <br>위 상황 속 printHello(), printBye()
-  - 어떤 이벤트에 의해 호출되어지는 함수 ex) click keyup ..
+
 ## Java
 - Vo는 필요에 맞게 쪼개 쓰기
 - 모든 Req, Res를 Vo로 쓰려고 고집하기 보다는 적당히 변수(ex: int, String...)로 요청하고 받는게 가독성이 좋은 듯
