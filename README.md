@@ -13,7 +13,7 @@
   - 다른 함수의 인자로써 사용되는 함수
   
 ![캡처](https://user-images.githubusercontent.com/67107008/120966888-d1e46380-c7a1-11eb-801e-16dea1793fa7.PNG)
-    위 상황 속 printHello(), printBye()
+<br>위 상황 속 printHello(), printBye()
   - 어떤 이벤트에 의해 호출되어지는 함수 ex) click keyup ..
 ## Java
 - Vo는 필요에 맞게 쪼개 쓰기
