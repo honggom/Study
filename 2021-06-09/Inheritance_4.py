@@ -3,7 +3,12 @@ class Father:
         print("hi")
 
 
-class Son(Father):
+class Mother:
+    def say_something(self):
+        print("plz")
+
+
+class Son(Father, Mother):
     def say_bye(self):
         print("bye")
 
@@ -11,16 +16,16 @@ class Son(Father):
 s = Son()
 s.say_bye()
 s.say_hi()
+s.say_something()
 
 '''
 결과 :
 bye
 hi
+plz
 '''
 
 
 '''
-Son 클래스 작성 시 Father을 상속받아 
-say_hi를 사용한 코드
-기본적으로 __init__ 은 생략해도 됨
+다중 상속이 가능
 '''
