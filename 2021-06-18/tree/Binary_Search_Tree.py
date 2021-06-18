@@ -12,7 +12,10 @@ class BinarySearchTree:
     def insert(self, data):
         self.base = self.root
         while True:
-            if data > self.base.data:
+            if data == self.base.data:
+                print("중복된 KEY 값")
+                break
+            elif data > self.base.data:
                 if self.base.right is None:
                     self.base.right = Node(data)
                     break
@@ -52,13 +55,7 @@ class BinarySearchTree:
 b = BinarySearchTree(10)
 b.insert(11)
 b.insert(9)
-print(b.root.data)
-print(b.root.right.data)
-print(b.root.left.data)
-print(b.search(10))
-print(b.search(9))
-print(b.search(1))
-
+b
 
 
 
