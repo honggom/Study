@@ -12,3 +12,8 @@
 - Leaf Node : child node가 하나도 없는 node
 - Sibling : 동일한 Parent Node를 가진 node
 - Depth : 트리에서 node가 가질 수 있는 최대 level
+
+## 3. 순회
+- 전위 순회 (pre-order traverse) : Root -> 왼쪽 -> 오른쪽
+- 중위 순회 (in-order traverse) : 왼쪽 -> Root -> 오른쪽
+- 후위 순호 (post-order traverse) : 왼쪽 -> 오른쪽 -> Root

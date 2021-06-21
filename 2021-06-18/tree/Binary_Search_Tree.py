@@ -5,28 +5,31 @@ class Node:
         self.right = None
 
 
-class BinarySearchTree:
-    def __init__(self, data):
-        self.root = Node(data)
+class Binary_Search_Tree:
+    def __init__(self):
+        self.root = None
 
     def insert(self, data):
-        self.base = self.root
-        while True:
-            if data == self.base.data:
-                print("중복된 KEY 값")
-                break
-            elif data > self.base.data:
-                if self.base.right is None:
-                    self.base.right = Node(data)
+        if self.root is None:
+            self.root = Node(data)
+        else:
+            self.base = self.root
+            while True:
+                if data == self.base.data:
+                    print("중복된 KEY 값")
                     break
+                elif data > self.base.data:
+                    if self.base.right is None:
+                        self.base.right = Node(data)
+                        break
+                    else:
+                        self.base = self.base.right
                 else:
-                    self.base = self.base.right
-            else:
-                if self.base.left is None:
-                    self.base.left = Node(data)
-                    break
-                else:
-                    self.base = self.base.left
+                    if self.base.left is None:
+                        self.base.left = Node(data)
+                        break
+                    else:
+                        self.base = self.base.left
 
     def search(self, data):
         self.base = self.root
@@ -40,24 +43,83 @@ class BinarySearchTree:
         return False
 
     def remove(self, data):
-        '''
-        삭제하는 경우는 3가지
-        1. 리프 노드(자식이 하나도 없을 경우)를 삭제하는 경우
-        2. 자식이 하나인 경우
-        3. 자식이 두개인 경우
-        '''
+        self.searched = False
+        self.cur_node = self.root
+        self.parent = self.root
+        while self.cur_node:
+            if self.cur_node.data == data:
+                self.searched = True
+                break
+            elif self.cur_node.data > data:
+                self.parent = self.cur_node
+                self.cur_node = self.cur_node.left
+            else:
+                self.parent = self.cur_node
+                self.cur_node = self.cur_node.right
+        if self.searched:
+            # root를 지우는 경우
+            if self.cur_node.data == self.parent.data:
+                self.root = None
+            else:
+                # [CASE 1] 삭제하는 node가 leaf node인 경우
+                if self.cur_node.left is None and self.cur_node.right is None:
+                    if self.parent.data > self.cur_node.data:
+                        self.parent.left = None
+                    else:
+                        self.parent.right = None
 
+                # [CASE 2] 삭제하는 node의 자식이 하나인 경우
+                elif self.cur_node.left is not None and self.cur_node.right is None:
+                    if self.parent.data > data:
+                        self.parent.left = self.cur_node.left
+                    else:
+                        self.parent.right = self.cur_node.left
+                elif self.cur_node.left is None and self.cur_node.right is not None:
+                    if self.parent.data > data:
+                        self.parent.left = self.cur_node.right
+                    else:
+                        self.parent.right = self.cur_node.right
 
+                # [CASE 3] 삭제하는 node의 자식이 둘인 경우
+                elif self.cur_node.left is not None and self.cur_node.right is not None:
+                    self.tmp_parent = self.cur_node.right
+                    self.tmp_cur = self.cur_node.right
+                    while self.tmp_cur.left:
+                        self.tmp_parent = self.tmp_cur
+                        self.tmp_cur = self.tmp_cur.left
+                    if self.tmp_cur.right is not None:
+                        self.tmp_parent.left = self.tmp_cur.right
+                    else:
+                        self.tmp_parent.left = None
+                    if self.parent.data > data:
+                        self.parent.left = self.tmp_cur
+                    else:
+                        self.parent.right = self.tmp_cur
+                    self.tmp_cur.left = self.cur_node.left
+                    self.tmp_cur.right = self.cur_node.right
+        else:
+            print("존재하지 않는 데이터")
 
+    # 전위 순회
+    def pre_order_traverse(self, node):
+        if not node:
+            return
+        print(node.data, end='->')
+        self.pre_order_traverse(node.left)
+        self.pre_order_traverse(node.right)
 
+    # 중위 순회
+    def in_order_traverse(self, node):
+        if not node:
+            return
+        self.in_order_traverse(node.left)
+        print(node.data, end='->')
+        self.in_order_traverse(node.right)
 
-
-b = BinarySearchTree(10)
-b.insert(11)
-b.insert(9)
-b
-
-
-
-
-
+    # 후위 순회
+    def post_order_traverse(self, node):
+        if not node:
+            return
+        self.post_order_traverse(node.left)
+        self.post_order_traverse(node.right)
+        print(node.data, end='->')
