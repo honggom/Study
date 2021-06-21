@@ -104,7 +104,7 @@ class Binary_Search_Tree:
     def pre_order_traverse(self, node):
         if not node:
             return
-        print(node.data, end='->')
+        print(node.data, end=' ')
         self.pre_order_traverse(node.left)
         self.pre_order_traverse(node.right)
 
@@ -113,7 +113,7 @@ class Binary_Search_Tree:
         if not node:
             return
         self.in_order_traverse(node.left)
-        print(node.data, end='->')
+        print(node.data, end=' ')
         self.in_order_traverse(node.right)
 
     # 후위 순회
@@ -122,4 +122,4 @@ class Binary_Search_Tree:
             return
         self.post_order_traverse(node.left)
         self.post_order_traverse(node.right)
-        print(node.data, end='->')
+        print(node.data, end=' ')
