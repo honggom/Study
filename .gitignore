@@ -1,7 +1,7 @@
 .DS_Store
 .vscode
 .idea
-2021-06-15/my_project/config
-2021-06-15/my_project/migrations
-2021-06-15/my_project/mongo
-2021-06-15/my_project/.idea
+python/2021-06-15/crawling_project/config
+python/2021-06-15/crawling_project/migrations
+python/2021-06-15/crawling_project/mongo
+python/2021-06-15/crawling_project/.idea
