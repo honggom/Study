@@ -62,3 +62,15 @@ public class UserDao {
 ```
 - 위 코드는 두 개의 오브젝트 간에 런타임 의존관계를 나타낸 것 : 
   - UserDao 오브젝트는 생성자를 통해 주입받은 ConnectionMaker의 구현 클래스를 언제든지 사용하면 된다.
+  
+### 의존관계 검색 (Dependency lookup)
+    자신이 필요로 하는 의존 오브젝트를 능동적으로 찾는 것 (물론 자신이 어떤 클래스의 오브젝트를 
+    이용할 지를 결정하지는 않는다.)
+
+```java
+public UserDao() {
+  DaoFactory daoFactory = new DaoFactory();
+  this.connectionMaker = daoFactory.connectionMaker(); 
+}
+```
+- 위와 같이 UserDao는 여전히 자신이 어떤 ConnectionMaker 오브젝트를 사용할 지 모름 (ConnectionMaker는 인터페이스)
