@@ -4,7 +4,7 @@ import json
 import requests
 
 # Blueprint(이름, 모듈명, url 프리픽스)
-bp = Blueprint('crawling', __name__, url_prefix='/')
+bp = Blueprint('crawling02', __name__, url_prefix='/')
 separator = '$$$'
 
 #해당 url의 html을 BeautifulSoup 객체로 리턴
@@ -26,7 +26,7 @@ def select_area(area_css:str, soup:BeautifulSoup) -> list:
 
     return rtn
 
-@bp.route('/crawling')
+@bp.route('/crawling02')
 def crawling():
     soup = get_html("http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun=")
 

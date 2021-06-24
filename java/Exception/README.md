@@ -1,4 +1,3 @@
-# 토비의 스프링 정리 2.
 ## 예외 / Exception
 ### 체크 예외 (일반 예외)
   : Exception 클래스의 서브 클래스이면서 RuntimeException 클래스를 상속하지 않는다.

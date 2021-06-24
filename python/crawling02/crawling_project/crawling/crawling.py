@@ -7,7 +7,7 @@ import time
 from pymongo.cursor import CursorType
 
 # Blueprint(이름, 모듈명, url 프리픽스)
-bp = Blueprint('crawling', __name__, url_prefix='/')
+bp = Blueprint('crawling02', __name__, url_prefix='/')
 separator = '$$$'
 
 # mongo
@@ -37,7 +37,7 @@ def select_area(area_css: str, soup: BeautifulSoup) -> list:
     return rtn
 
 
-@bp.route('/crawling')
+@bp.route('/crawling02')
 def crawling():
     soup = get_html("http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubu"
                     "n=")
@@ -68,7 +68,7 @@ def crawling():
                        'jeju': jeju}, indent=4, ensure_ascii=False)
     '''
 
-    bjh.insert({'date': '2021-06-15', 'seoul': seoul, 'busan': busan, 'daegu': daegu, 'incheon': incheon,
+    bjh.insert({'date': 'crawling02', 'seoul': seoul, 'busan': busan, 'daegu': daegu, 'incheon': incheon,
                 'gwangju': gwangju, 'daejeon': daejeon, 'ulsan': ulsan, 'sejong': sejong,
                 'gyeonggi': gyeonggi, 'gangwon': gangwon, 'chungbuk': chungbuk, 'chungnam': chungnam,
                 'jeonbuk': jeonbuk, 'jeonnam': jeonnam, 'gyeongbuk': gyeongbuk, 'gyeongnam': gyeongnam,
