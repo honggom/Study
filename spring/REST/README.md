@@ -1,6 +1,6 @@
 # Spring REST Controller
 
-## GET 
+## GET (리소스 취득) / (CRUD의 R)
 - @PathVariable 활용 
     - 요청 : http://localhost:8080/api/get/path-var/hong
     - 결과 : hong
@@ -104,7 +104,7 @@
         }
     }
     ```
-## POST
+## POST (리소스 생성, 추가) / (CRUD의 C)
 - @RequestBody 활용
     - 요청 : http://localhost:8080/api/post/test
       - body : 
@@ -155,4 +155,37 @@
             System.out.println(product.toString());
         }
        ```
-    
+      
+## Put (리소스 갱신) / (CRUD의 C, U)
+- @RequestBody 활용    
+    - 요청 : http://localhost:8080/api/put/test
+      - body : 
+        ```
+        {
+          "name" : "stv",
+          "price" : 100,
+          "etc" : "s"
+        }
+        ```
+    - 결과 : Product{name='stv', price=100, etc='s'}
+    - 내용 : post와 마찬가지로 요청 메시지를 body로 받음 
+    - 코드 : 
+        ```java
+        @PutMapping("/test")
+        public void put(@RequestBody Product product){
+            System.out.println(product);
+        }
+        ```
+      
+## Delete (리소스 삭제) / (CRUD의 D)
+- @PathVariable, @RequestParam 동시 활용
+    - 요청 : http://localhost:8080/api/delete/test/cavok699?check=1234
+    - 결과 ; cavok699 1234
+    - 내용 : header에 PathVar랑 동시에 RequestParam 사용
+    - 코드 :
+        ```java
+        @DeleteMapping("/test/{userId}")
+        public void delete(@PathVariable String userId, @RequestParam String check){
+            System.out.println(userId+" "+check);
+        }
+        ```
