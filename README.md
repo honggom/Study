@@ -43,6 +43,7 @@
 ### 네트워크
 - HTTP
     - uri, url, urn의 차이 : https://honggom.tistory.com/38?category=863357
+    - TCP/IP, DNS 알아보기 : https://honggom.tistory.com/41
 - WAS
 - Web Server
 - TCP/IP
