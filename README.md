@@ -47,7 +47,6 @@
     - 프록시, 게이트웨이, 터널 알아보기 : https://honggom.tistory.com/42
 - WAS
 - Web Server
-- TCP/IP
 ### 운영체제
 - 리눅스
 ### AWS
