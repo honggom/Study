@@ -1,6 +1,4 @@
-# 토비의 스프링 정리 1.
-
-### 제어의 역전 (IoC Inversion of Control)
+## 제어의 역전 (IoC Inversion of Control)
     - 모든 제어 권한을 자신이 아닌 다른 대상에게 위임하는 것
     - ex) : 슈퍼클래스 UserDao를 상속한 서브클래스가 DB 커넥션의 기능을 따로 구현해서 사용 즉, 
             UserDao 입장에서는 서브클래스가 언제 어떻게 사용될지 UserDao는 모름 
@@ -43,7 +41,7 @@
   - getBean() 의 첫번째 파라미터는 메서드의 이름, 두번째는 리턴 타입
   - 기본적으로 애플리케이션 컨텍스트는 싱글톤을 저장하고 관리하는 싱글톤 레지스트리이다.
   
-### 의존관계 주입 (DI Dependency Injection)
+## 의존관계 주입 (DI Dependency Injection)
     ex) A가 B를 의존하고 있다.
         : B가 변하면 A에 영향을 미친다. 반대로 B는 A의 변화에 영향을 받지 않는다.
 
@@ -74,3 +72,12 @@ public UserDao() {
 }
 ```
 - 위와 같이 UserDao는 여전히 자신이 어떤 ConnectionMaker 오브젝트를 사용할 지 모름 (ConnectionMaker는 인터페이스)
+---
+## @Bean, @Component 차이
+### @Bean :
+  - 개발자가 직접 제어가 불가능한 외부 라이브러리를 사용할 때 사용한다.
+  - @Configuraion을 선언한 클래스 내부에서 사용한다.
+  - 즉, 개발자가 작성한 <strong>메서드</strong>를 통해 반환되는 객체를 Bean으로 만든다.
+### @Component :
+  - 개발자가 직접 작성한 class를 Bean으로 등록 할 수 있게 만들어 준다.
+  - 즉, 개발자가 작성한 class를 Bean으로 만든다.
