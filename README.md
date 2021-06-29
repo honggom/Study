@@ -1,6 +1,7 @@
 ### Today I Learned
     오늘 배운 것을 꾸준히 기록하는 공간입니다.
-    
+---
+## 블로그 글 정리 목록
 ### 자료구조
 - 배열
     - 연결 리스트 : https://honggom.tistory.com/24?category=865252
