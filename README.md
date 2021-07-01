@@ -27,7 +27,7 @@
 - 완전탐색
   - 브루트포스
   - 비트마스크
-  - 재귀함수
+  - 재귀함수 : https://honggom.tistory.com/25
   - 백트래킹
   - 수열
   - BFS
@@ -44,7 +44,7 @@
   - 다익스트라
 ### 네트워크
 - HTTP
-    - uri, url, urn의 차이 : https://honggom.tistory.com/38?category=863357
+    - URI, URL, URN의 차이 : https://honggom.tistory.com/38?category=863357
     - TCP/IP, DNS 알아보기 : https://honggom.tistory.com/41
     - 프록시, 게이트웨이, 터널 알아보기 : https://honggom.tistory.com/42
 - WAS
@@ -60,7 +60,6 @@
 - Open Redirect
 - Command Injection
 - Directory Traversal
-### Git
 ### DB
 - MySQL
     - text, char, varchar의 차이 : https://honggom.tistory.com/2?category=844625
@@ -68,7 +67,7 @@
 - 람다 : https://honggom.tistory.com/34?category=844630
 - 스트림 : https://honggom.tistory.com/37?category=844630
 - 접근 제한자 : https://honggom.tistory.com/36?category=844630
-- jvm, jdk, jre : https://honggom.tistory.com/3?category=844630
+- JVM, JDK, JRE : https://honggom.tistory.com/3?category=844630
 ### Spring (Spring Boot)
 - 타임리프 문법 : https://honggom.tistory.com/4?category=844633
 ### Python
