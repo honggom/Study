@@ -67,7 +67,7 @@
 - 람다 : https://honggom.tistory.com/34?category=844630
 - 스트림 : https://honggom.tistory.com/37?category=844630
 - 접근 제한자 : https://honggom.tistory.com/36?category=844630
-- jvm, jdk, jre : https://honggom.tistory.com/3?category=844630
+- JVM, JDK, JRE : https://honggom.tistory.com/3?category=844630
 ### Spring (Spring Boot)
 - 타임리프 문법 : https://honggom.tistory.com/4?category=844633
 ### Python
