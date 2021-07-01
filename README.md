@@ -27,7 +27,7 @@
 - 완전탐색
   - 브루트포스
   - 비트마스크
-  - 재귀함수
+  - 재귀함수 : https://honggom.tistory.com/25
   - 백트래킹
   - 수열
   - BFS
@@ -60,7 +60,6 @@
 - Open Redirect
 - Command Injection
 - Directory Traversal
-### Git
 ### DB
 - MySQL
     - text, char, varchar의 차이 : https://honggom.tistory.com/2?category=844625
