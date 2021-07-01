@@ -44,7 +44,7 @@
   - 다익스트라
 ### 네트워크
 - HTTP
-    - uri, url, urn의 차이 : https://honggom.tistory.com/38?category=863357
+    - URI, URL, URN의 차이 : https://honggom.tistory.com/38?category=863357
     - TCP/IP, DNS 알아보기 : https://honggom.tistory.com/41
     - 프록시, 게이트웨이, 터널 알아보기 : https://honggom.tistory.com/42
 - WAS
