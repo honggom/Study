@@ -1,7 +1,7 @@
 ### Today I Learned
     오늘 배운 것을 기록하는 공간입니다.
----
-## 블로그 글 정리 목록
+
+## 블로그 작성 목록
 
 ### 자료구조
 - 배열
@@ -30,18 +30,19 @@
   - 재귀함수 : https://honggom.tistory.com/25
   - 백트래킹
   - 수열
-  - BFS
-  - DFS
 - 다이나믹 프로그래밍(DP, 동적 계획법)
   - LIS
   - LCS
   - 냅색
   - 트리 DP (DP개념을 트리 구조에 적용)
 - 그리디 (탐욕법)
-- 그래프 최단 경로
-  - 프림
-  - 크루스칼
-  - 다익스트라
+- 그래프
+  - BFS
+  - DFS 
+  - 최단 경로
+    - 프림
+    - 크루스칼
+    - 다익스트라
 ### 네트워크
 - HTTP
     - URI, URL, URN의 차이 : https://honggom.tistory.com/38?category=863357
@@ -49,7 +50,7 @@
     - 프록시, 게이트웨이, 터널 알아보기 : https://honggom.tistory.com/42
 - WAS
 - Web Server
-### 운영체제
+### OS
 - 리눅스
 ### AWS
 ### Docker
