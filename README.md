@@ -50,7 +50,7 @@
     - 프록시, 게이트웨이, 터널 알아보기 : https://honggom.tistory.com/42
 - WAS
 - Web Server
-### 운영체제
+### OS
 - 리눅스
 ### AWS
 ### Docker
