@@ -30,18 +30,19 @@
   - 재귀함수 : https://honggom.tistory.com/25
   - 백트래킹
   - 수열
-  - BFS
-  - DFS
 - 다이나믹 프로그래밍(DP, 동적 계획법)
   - LIS
   - LCS
   - 냅색
   - 트리 DP (DP개념을 트리 구조에 적용)
 - 그리디 (탐욕법)
-- 그래프 최단 경로
-  - 프림
-  - 크루스칼
-  - 다익스트라
+- 그래프
+  - BFS
+  - DFS 
+  - 최단 경로
+    - 프림
+    - 크루스칼
+    - 다익스트라
 ### 네트워크
 - HTTP
     - URI, URL, URN의 차이 : https://honggom.tistory.com/38?category=863357
