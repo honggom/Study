@@ -17,17 +17,17 @@
 - 그래프 : 
 
 ### 알고리즘
+- 재귀함수 : https://honggom.tistory.com/25
+- 동적 프로그래밍(DP)
+- 탐욕법
+- 백트래킹
+- 이진 탐색
 - 정렬
   - 선택 정렬
   - 삽입 정렬
   - 버블 정렬 : https://honggom.tistory.com/43
   - 합병(병합) 정렬
   - 퀵 정렬
-- 재귀함수 : https://honggom.tistory.com/25
-- 동적 프로그래밍(DP)
-- 탐욕법
-- 백트래킹
-- 이진 탐색
 - 그래프
   - BFS
   - DFS
