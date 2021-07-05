@@ -15,34 +15,27 @@
     - 이진 탐색 트리 : https://honggom.tistory.com/40
 - 힙 :
 - 그래프 : 
+
 ### 알고리즘
-- 문자열
 - 정렬
   - 선택 정렬
   - 삽입 정렬
   - 버블 정렬 : https://honggom.tistory.com/43
   - 합병(병합) 정렬
   - 퀵 정렬
-- 이분탐색
-- 완전탐색
-  - 브루트포스
-  - 비트마스크
-  - 재귀함수 : https://honggom.tistory.com/25
-  - 백트래킹
-  - 수열
-- 다이나믹 프로그래밍(DP, 동적 계획법)
-  - LIS
-  - LCS
-  - 냅색
-  - 트리 DP (DP개념을 트리 구조에 적용)
-- 그리디 (탐욕법)
+- 재귀함수 : https://honggom.tistory.com/25
+- 동적 프로그래밍(DP)
+- 탐욕법
+- 백트래킹
+- 이진 탐색
 - 그래프
   - BFS
-  - DFS 
-  - 최단 경로
-    - 프림
+  - DFS
+  - 다익스트라
+  - 신장 트리 알고리즘
     - 크루스칼
-    - 다익스트라
+    - 프림
+
 ### 네트워크
 - HTTP
     - URI, URL, URN의 차이 : https://honggom.tistory.com/38?category=863357
@@ -50,6 +43,7 @@
     - 프록시, 게이트웨이, 터널 알아보기 : https://honggom.tistory.com/42
 - WAS
 - Web Server
+
 ### OS
 - 리눅스
 ### AWS
