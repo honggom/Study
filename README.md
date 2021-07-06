@@ -24,7 +24,7 @@
 - 이진 탐색
 - 정렬
   - 선택 정렬
-  - 삽입 정렬
+  - 삽입 정렬 : https://honggom.tistory.com/51
   - 버블 정렬 : https://honggom.tistory.com/43
   - 합병(병합) 정렬
   - 퀵 정렬
@@ -41,6 +41,7 @@
     - URI, URL, URN의 차이 : https://honggom.tistory.com/38?category=863357
     - TCP/IP, DNS 알아보기 : https://honggom.tistory.com/41
     - 프록시, 게이트웨이, 터널 알아보기 : https://honggom.tistory.com/42
+    - GET, POST 차이 : https://honggom.tistory.com/50
 - WAS
 - Web Server
 
