@@ -21,7 +21,7 @@
 - 동적 프로그래밍(DP)
 - 탐욕법
 - 백트래킹
-- 이진 탐색
+- 이진 탐색 : https://honggom.tistory.com/53
 - 정렬
   - 선택 정렬
   - 삽입 정렬 : https://honggom.tistory.com/51
