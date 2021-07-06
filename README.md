@@ -23,7 +23,7 @@
 - 백트래킹
 - 이진 탐색 : https://honggom.tistory.com/53
 - 정렬
-  - 선택 정렬
+  - 선택 정렬 : https://honggom.tistory.com/55
   - 삽입 정렬 : https://honggom.tistory.com/51
   - 버블 정렬 : https://honggom.tistory.com/43
   - 합병(병합) 정렬
