@@ -11,14 +11,12 @@ def binary_search(data, search):
         return True
     else:
         if search > data[mid]:
+            print(data)
             return binary_search(data[mid:], search)
         else:
+            print(data)
             return binary_search(data[:mid], search)
 
 
-data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(binary_search(data, 12))
-mid = len(data) // 2
-print(mid)
-print(data[mid:])
-print(data[:mid])
+data = [1,2,3,4,5,6,7,8,9,10,11]
+binary_search(data,8)
