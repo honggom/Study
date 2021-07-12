@@ -3,18 +3,16 @@ package com.example.jpapractice.repository;
 import com.example.jpapractice.dto.Gender;
 import com.example.jpapractice.dto.User;
 import org.assertj.core.util.Lists;
-import org.hibernate.criterion.Order;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.*;
-import java.util.ArrayList;
-import java.util.List;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.endsWith;
-import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.startsWith;
 
 @SpringBootTest
 class UserRepositoryTest {
@@ -24,6 +22,8 @@ class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private UserHistoryRepository userHistoryRepository;
 
     @Test
     void crud() {
@@ -283,6 +283,53 @@ class UserRepositoryTest {
         logger.info("Map : "+userRepository.findRowRecord().get("name"));
         logger.info("Native Query : "+userRepository.findRowRecord().get("gender"));
     }
+
+    @Test
+    void listenerTest() {
+        User user = new User();
+        user.setEmail("martin2@naver.com");
+        user.setName("martin");
+
+        userRepository.save(user);
+
+        User user2 = userRepository.findById(1L).orElseThrow(RuntimeException::new);
+        user2.setName("marrrrrrrtin");
+
+        userRepository.save(user2);
+
+        userRepository.deleteById(4L);
+    }
+
+    @Test
+    void prePersistTest() {
+        User user = new User();
+        user.setEmail("hong2@naver.com");
+        user.setName("hong");
+        user.setCreatedAt(LocalDateTime.now());
+        user.setUpdatedAt(LocalDateTime.now());
+
+        userRepository.save(user);
+
+        logger.info("-----------------------");
+        logger.info("prePersistTest : "+userRepository.findByEmail("hong2@naver.com"));
+        logger.info("-----------------------");
+    }
+
+    @Test
+    void userHistoryTest() {
+        User user = new User();
+        user.setEmail("martin-new@naver.com");
+        user.setName("martin-new");
+
+        userRepository.save(user);
+
+        user.setName("martin-new-new");
+
+        userRepository.save(user);
+
+        userHistoryRepository.findAll().forEach(System.out::println);
+    }
+
 }
 
 

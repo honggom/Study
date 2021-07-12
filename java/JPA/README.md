@@ -63,10 +63,18 @@ public class User {
 - @Transient : 해당 필드는 영속성 처리에서 제외됨 -> DB의 레코드로써 사용하는 것이 아닌 자바의 객체로 사용
 - @Enumerated(value = EnumType.STRING) : Enum 객체 사용시 Odinal (서순)이 DB에 저장되거나 하는 문제를 방지
 
+## Entity의 Listener
 
+- @PrePersist : Insert 전에 동작
+- @PreUpdate : Update 전에 동작 
+- @PreRemove : Delete 전에 동작
+- @PostPersist : Insert 후에 동작
+- @PostUpdate : Update 후에 동작
+- @PostRemove : Delete 후에 동작
+- @PostLoad : Select 후에 동작
 
-
-
+### @EntityListeners(value = AuditingEntityListener.class)
+- JPA의 Entity에 대한 동일한 기능을 만들기 유용함
 
 
 
