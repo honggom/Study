@@ -1,4 +1,4 @@
-## 저장소 이전 
+## <span style="color:red">저장소 이전</span>
 - https://github.com/honggom/jpa-practice 왼쪽 주소로 저장소를 변경하여 기록 중입니다.
 
 
