@@ -36,15 +36,14 @@
     - 크루스칼
     - 프림
 
-### 네트워크
+### 네트워크 & 웹
 - HTTP
     - URI, URL, URN의 차이 : https://honggom.tistory.com/38?category=863357
     - TCP/IP, DNS 알아보기 : https://honggom.tistory.com/41
     - 프록시, 게이트웨이, 터널 알아보기 : https://honggom.tistory.com/42
     - GET, POST 차이 : https://honggom.tistory.com/50
 - OSI 7 계층 : https://honggom.tistory.com/56
-- WAS
-- Web Server
+- Web Server, WAS 차이 : https://honggom.tistory.com/57
 
 ### OS
 - 리눅스
