@@ -26,8 +26,8 @@
   - 선택 정렬 : https://honggom.tistory.com/55
   - 삽입 정렬 : https://honggom.tistory.com/51
   - 버블 정렬 : https://honggom.tistory.com/43
-  - 합병(병합) 정렬
-  - 퀵 정렬
+  - 합병(병합) 정렬 : https://honggom.tistory.com/58
+  - 퀵 정렬 : https://honggom.tistory.com/59
 - 그래프
   - BFS
   - DFS
