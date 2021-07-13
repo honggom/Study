@@ -39,4 +39,14 @@ def merge(left, right):
 
 target = [10,7,1,5,6,8,1,2,3]
 
-print(merge_sort(target))
+# print(merge_sort(target))
+
+def split2(data):
+    if len(data) <= 1:
+        return data
+    mid = int(len(data)/2)
+    left = split(data[:mid])
+    right = split(data[mid:])
+    return left, right
+
+print(split(target))

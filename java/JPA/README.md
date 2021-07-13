@@ -64,6 +64,8 @@ public class User {
 - @Enumerated(value = EnumType.STRING) : Enum 객체 사용시 Odinal (서순)이 DB에 저장되거나 하는 문제를 방지
 
 ## Entity의 Listener
+    Entity의 시점 select, insert, update, delete에 원하는 기능을 적용할 수 있음 
+    개인적으로 Entity 버전 AOP 같은 느낌..
 
 - @PrePersist : Insert 전에 동작
 - @PreUpdate : Update 전에 동작 
@@ -76,10 +78,21 @@ public class User {
 ### @EntityListeners(value = AuditingEntityListener.class)
 - JPA의 Entity에 대한 동일한 기능을 만들기 유용함
 
+## 연관 관계 정의 규칙
+(참조 : https://jeong-pro.tistory.com/231)
+- 방향 : 단방향, 양방향 (객체 참조)
+  - DB 테이블은 외래키 하나로 양쪽 테이블 조인이 가능하지만 jpa는 그렇지 않음
+  - 두 객체 사이에 하나의 객체만 참조용 필드를 갖고 참조하면 단방향 관계, 두 객체 모드가 각각 참조용
+  필드를 갖고 참조하면 양방향 관계
+- 연관 관계의 주인 : 양방향일 때, 연관 관계에서 관리 주체
+- 다중성 : 다대일(N:1), 일대다(1:N), 일대일(1:1), 다대다(N:N)
 
-
-
-
+## JPA 연관 관계 어노테이션
+- @OneToOne : 1:1 관계를 정의
+- @OneToMany : 1:N 관계를 정의
+- @ManyToOne : N:1 관계를 정의
+- @ManyToMany : N:N 관계를 정의
+- 옵션 (mappedBy = {해당 클래스}) : 해당 테이블 정의시 참조키를 정의 하지 않음  
 
 
 
