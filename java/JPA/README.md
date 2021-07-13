@@ -1,5 +1,6 @@
 ## 저장소 이전 
-- https://github.com/honggom/jpa-practice 해당 주소로 연습 기록 이전
+- https://github.com/honggom/jpa-practice 왼쪽 주소로 저장소를 변경하여 기록 중입니다.
+
 
 ## ORM (Object-Relation Mapping / 객체 관계 매핑)
     ORM은 결국 자바 객체와 디비 레코드와의 연결 관계를 맺어주는 것이므로 최종 동작하는 것은 쿼리문이다.
