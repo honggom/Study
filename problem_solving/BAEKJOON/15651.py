@@ -7,7 +7,6 @@ def back_tracking(depth):
         print(' '.join(map(str, visited)))
         return
     for i in range(1, n + 1):
-        if i not in visited:
             visited.append(i)
             back_tracking(depth + 1)
             visited.pop()
