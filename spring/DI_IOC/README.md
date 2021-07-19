@@ -81,3 +81,42 @@ public UserDao() {
 ### @Component :
   - 개발자가 직접 작성한 class를 Bean으로 등록 할 수 있게 만들어 준다.
   - 즉, 개발자가 작성한 class를 Bean으로 만든다.
+
+## @Autowired, @RequiredArgsConstructor 차이
+- @Autowired : 필드 주입을 통한 의존성 주입 방식 (setter)
+  - 단점 :
+    - 단일 책임의 원칙 위반 :
+      - 필드 주입 망식은 일단 의존성을 주입하기 쉽습니다. 
+      @Autowired 선언 아래 3개든 10개든 막 추가할 수 있으니... 여기서 Constructor 
+      Injection을 사용하면 다른 Injection 타입에 비해 위기감 같은 걸 느끼게 해줍니다. 
+      Constructor의 파라미터가 많아짐과 동시에 하나의 클래스가 많은 책임을 떠안는다는 
+      걸 알게됩니다. 이때 이러한 징조들이 리팩토링을 해야한다는 신호가 될 수 있습니다.   
+    
+    - 의존성이 숨는다 : 
+      - DI(Dependency Injection) 컨테이너를 사용한다는 것은 클래스가 
+      자신의 의존성만 책임진다는게 아닙니다. 제공된 의존성 또한 책임집니다. 그래서 클래스가 
+      어떤 의존성을 책임지지 않을 때, 메서드나 생성자를 통해(Setter나 Contructor) 확실히 커뮤니케이션이 
+      되어야만합니다. 하지만 Field Injection은 숨은 의존성만 제공해줍니다.
+
+    - DI 컨테이너의 결합성과 테스트 용이성 : 
+      - DI 프레임워크의 핵심 아이디어는 관리되는 클래스가 DI 컨테이너에 
+      의존성이 없어야합니다. 즉, 필요한 의존성을 전달하면 독립적으로 인스턴스화 할 수 있는 단순 POJO여야합니다. 
+      DI 컨테이너 없이도 유닛테스트에서 인스턴스화 시킬 수 있고, 각각 나누어서 테스트도 할 수 있습니다. 컨테이너의 
+      결합성이 없다면 관리하거나 관리하지 않는 클래스를 사용할 수 있고, 심지어 다른 DI 컨테이너로 전환할 수 있습니다.
+      하지만, Field Injection을 사용하면 필요한 의존성을 가진 클래스를 곧바로 인스턴스화 시킬 수 없습니다.
+      
+    - 불변성(Immutability) : 
+      - Constructor Injection과 다르게 Field Injection은 final을 선언할 수 없습니다. 
+      그래서 객체가 변할 수 있습니다.
+
+    - 순환 의존성 : 
+      - Constructor Injection에서 순환 의존성을 가질 경우 BeanCurrentlyCreationExeption을 
+      발생시킴으로써 순환 의존성을 알 수 있습니다.
+      - 순환 의존성이란? : 
+        - First Class가 Second Class를 참조하는데 Second Class가 다시 First Class를 참조할 경우 혹은 First Class가 Second Class를 참조하고, Second Class가 Third Class를 참조하고 Third Class가 First Class를 참조하는 경우 이를 순환 의존성이라고 부릅니다. (혹은 순환 참조)
+- @RequiredArgsConstructor : 생성자를 통한 의존성 주입 방식 (스프링 측에서 추천하는 방식)
+  - 장점 :
+    - 순환 참조 방지
+    - 테스트 코드 작성 용이
+    - 코드 악취 제거
+    - 객체 변이 방지 (final 가능)
