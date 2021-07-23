@@ -81,6 +81,8 @@ public UserDao() {
 ### @Component :
   - 개발자가 직접 작성한 class를 Bean으로 등록 할 수 있게 만들어 준다.
   - 즉, 개발자가 작성한 class를 Bean으로 만든다.
+### 더 자세한 설명 
+- 개발자 이동욱님 블로그 글 : https://jojoldu.tistory.com/27
 
 ## @Autowired, @RequiredArgsConstructor 차이
 - <strong>@Autowired</strong> : 필드 주입을 통한 의존성 주입 방식 (setter)
