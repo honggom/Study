@@ -1,4 +1,3 @@
-
 import collections
 class Solution:
     def canFinish(self, numCourses, prerequisites) -> bool:
@@ -21,7 +20,6 @@ class Solution:
                     return False
 
             visited.remove(node)
-
             return True
 
         for x in list(graph):
@@ -29,7 +27,3 @@ class Solution:
                 return False
 
         return True
-    
-    
-s = Solution()
-s.canFinish(1, [[0,1],[0,2],[1,2]])
