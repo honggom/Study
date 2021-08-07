@@ -13,14 +13,13 @@ for q in question:
         if q == "+":
             stack.append(num1 + num2)
         elif q == "-":
-            stack.append(num1 - num2)
+            stack.append(num2 - num1)
         elif q == "*":
             stack.append(num1 * num2)
         elif q == "/":
-            stack.append(num1 % num2)
+            stack.append(num2 / num1)
     else:
         stack.append(nums[q])
-    print(stack)
 
-#print(stack.pop())
+print('%.2f' % stack.pop())
 
