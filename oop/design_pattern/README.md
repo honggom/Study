@@ -104,3 +104,39 @@ public class Main {
     }
 }
 ```
+
+## 템플릿/콜백 패턴 
+- 전략패턴의 변환된 형태이며, 반복적인 또는 기본적인 동작들을 템플릿 (아래 코드에서는 myMethod)으로 잡아두고
+변화되는 부분을 익명 내부 클래스(람다)로 바로 생성하여 사용하는 패턴이다.
+```java
+class MyClass {
+    void myMethod(PrintB printB) {
+        a();
+
+        printB.b();
+
+        c();
+    }
+
+    void a() {
+        System.out.println("A");
+    }
+
+    void c() {
+        System.out.println("C");
+    }
+}
+
+interface PrintB {
+    void b();
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass myClass = new MyClass();
+
+        myClass.myMethod(()-> System.out.println("B1"));
+        myClass.myMethod(()-> System.out.println("B2"));
+    }
+}
+```
