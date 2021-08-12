@@ -1,7 +1,7 @@
 n = int(input())
 stars = []
 for i in range(1, n + 1):
-    star = (i*"*")+((n-i)*2)*" "+(i*"*")
+    star = (n - i) * " " + (i * "*")
     print(star)
     stars.append(star)
 stars.pop()
