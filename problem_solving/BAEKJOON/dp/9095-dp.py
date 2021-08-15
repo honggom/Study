@@ -1,3 +1,4 @@
+# dp 방식
 for _ in range(int(input())):
 
     n = int(input())
