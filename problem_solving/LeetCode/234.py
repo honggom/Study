@@ -27,4 +27,4 @@ class Solution:
         while len(d) > 1:
             if d.popleft() != d.pop():
                 return False
-        return True 
+        return True
