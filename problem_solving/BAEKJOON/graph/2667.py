@@ -3,7 +3,6 @@ input = sys.stdin.readline
 
 n = int(input())
 graph = [list(map(int, input().rstrip())) for i in range(n)]
-visited = [[0] * n for i in range(n)]
 houses = []
 house = 0
 
@@ -13,7 +12,6 @@ def dfs(i, j):
     if i < 0 or j < 0 or j >= n or i >= n or graph[i][j] == 0:
         return
     graph[i][j] = 0
-    visited[i][j] = 1
     house += 1
 
     # 동서남북 탐색
@@ -24,7 +22,7 @@ def dfs(i, j):
 
 for i in range(n):
     for j in range(n):
-        if visited[i][j] == 0 and graph[i][j] == 1:
+        if graph[i][j] == 1:
             dfs(i, j)
             houses.append(house)
             house = 0
