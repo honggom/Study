@@ -1,55 +1,42 @@
+from collections import deque
 import sys
 input = sys.stdin.readline
-sys.setrecursionlimit(10 ** 7)
 
 m, n = map(int, input().split())
 tomatos = [list(map(int, input().split())) for _ in range(n)]
-temp = tomatos.copy()
-count = 0
+queue = deque()
 
-def dfs(i, j):
-    if i < 0 or j < 0 or j >= m or i >= n:
-        return
-    if temp[i][j] == -1:
-        return
-    if temp[i][j] == 0:
-        temp[i][j] = 1
-        return
-
-    # 동서남북 탐색
-    dfs(i + 1, j)
-    dfs(i, j + 1)
-    dfs(i - 1, j)
-    dfs(i, j - 1)
-
-zero_count_history = 0
 for i in range(n):
     for j in range(m):
-        if tomatos[i][j] == 0:
-            zero_count_history += 1
+        if tomatos[i][j] == 1:
+            queue.append([i, j])
 
-while True:
-    zero_count = 0
+xx = [1, -1, 0, 0]
+yy = [0, 0, 1, -1]
 
-    for i in range(n):
-        for j in range(m):
-            if tomatos[i][j] == 0:
-                zero_count += 1
-            if tomatos[i][j] == 1:
-                dfs(i, j)
+while queue:
+    row, col = queue.popleft()
 
-    for i in range(n):
-        for j in range(m):
-            if temp[i][j] == 1:
-                tomatos[i][j] = 1
+    for k in range(4):
+        _row = row + yy[k]
+        _col = col + xx[k]
 
-    if zero_count == 0:
-        print(count)
-        break
-    if zero_count_history == zero_count:
-        print(-1)
-        break
+        if 0 <= _row < n and 0 <= _col < m and tomatos[_row][_col] == 0:
+            tomatos[_row][_col] = tomatos[row][col] + 1
+            queue.append([_row, _col])
 
-    zero_count_history = zero_count
+result = -2
+is_not_grow = False
 
-    count += 1
+for tomato_one_line in tomatos:
+    for tomato in tomato_one_line:
+        if tomato == 0:
+            is_not_grow = True
+        result = max(result, tomato)
+
+if is_not_grow:
+    print(-1)
+elif result == -1:
+    print(0)
+else:
+    print(result - 1)
