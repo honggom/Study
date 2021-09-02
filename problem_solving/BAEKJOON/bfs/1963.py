@@ -18,11 +18,11 @@ def check(num, index, depth):
     for i in range(10):
         pivot.insert(index, str(i))
         changed_num = int("".join(pivot))
-        if changed_num >= 1000 and sqrts[changed_num] and not visited[changed_num]:
+        if changed_num >= 1000 and primes[changed_num] and not visited[changed_num]:
             q.append([changed_num, depth])
         del pivot[index]
 
-sqrts = [is_prime(i) for i in range(10000)]
+primes = [is_prime(i) for i in range(10000)]
 t = int(input())
 for _ in range(t):
     n, m = map(int, input().split())
