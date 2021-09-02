@@ -1,6 +1,6 @@
 from collections import deque
 n, k = map(int, input().split())
-visited = [0 for i in range(100001)]
+visited = [False] * 100001
 q = deque()
 q.append([n, 0])
 
@@ -9,12 +9,12 @@ while q:
     if pivot == k:
         break
     q.popleft()
-    visited[pivot] = 1
-    if pivot - 1 >= 0 and visited[pivot - 1] == 0:
+    visited[pivot] = True
+    if pivot - 1 >= 0 and not visited[pivot - 1]:
         q.append([pivot - 1, d + 1])
-    if pivot + 1 <= 100000 and visited[pivot + 1] == 0:
+    if pivot + 1 <= 100000 and not visited[pivot + 1]:
         q.append([pivot + 1, d + 1])
-    if pivot * 2 <= 100000 and visited[pivot * 2] == 0:
+    if pivot * 2 <= 100000 and not visited[pivot * 2]:
         q.append([pivot * 2, d + 1])
 
 print(q[0][1])
