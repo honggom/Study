@@ -1,4 +1,6 @@
 from collections import deque
+from sys import stdin
+input = stdin.readline
 
 def pour(x, y):
     if not visited[x][y]:
