@@ -5,7 +5,7 @@ input = sys.stdin.readline
 n = int(input())
 m = int(input())
 graph = collections.defaultdict(list)
-friends = []
+friends = set()
 
 for i in range(m):
     a, b = map(int, input().split())
@@ -16,13 +16,9 @@ if not graph[1]:
     print(0)
 else:
     for i in graph[1]:
-        friends.append(i)
+        friends.add(i)
         if i in graph:
             for j in graph[i]:
-                friends.append(j)
-
-    friends = set(friends)
+                friends.add(j)
 
     print(len(friends) - 1)
-
-
