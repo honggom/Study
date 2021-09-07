@@ -13,9 +13,9 @@ def bfs(y, x):
                 graph[ny][nx] = graph[y][x]+1
 
 n = int(input())
-sr, sc, er, ec = map(int, input().split())
+r1, c1, r2, c2 = map(int, input().split())
 graph = [[-1] * n for _ in range(n)]
 d = [(-2, -1), (-2, 1), (0, -2), (0, 2), (2, -1), (2, 1)]
-bfs(sr, sc)
+bfs(r1, c1)
 
-print(graph[er][ec])
+print(graph[r2][c2])
