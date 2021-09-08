@@ -1,8 +1,8 @@
 .DS_Store
 .vscode
 .idea
-python/crawling02/crawling_project/config
-python/crawling02/crawling_project/migrations
-python/crawling02/crawling_project/mongo
-python/crawling02/crawling_project/.idea
+python/crawling02/crawling-project/config
+python/crawling02/crawling-project/migrations
+python/crawling02/crawling-project/mongo
+python/crawling02/crawling-project/.idea
 problem-solving/baekjoon/test.py
