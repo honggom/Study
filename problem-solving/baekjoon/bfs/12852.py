@@ -18,7 +18,8 @@ for i in range(2, n + 1):
 
 print(dp[n])
 print(n, end=" ")
-back_tracking_num = n
-while history[back_tracking_num] != 0:
-    print(history[back_tracking_num], end=" ")
-    back_tracking_num = history[back_tracking_num]
+
+back_num = n
+while history[back_num] != 0:
+    print(history[back_num], end=" ")
+    back_num = history[back_num]
