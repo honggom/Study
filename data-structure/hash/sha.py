@@ -14,11 +14,11 @@ hash의 충돌 빈도가 높아지면
 
 #SHA
 import hashlib
-data = 'test'.encode()
+data = 'junit'.encode()
 hash_object = hashlib.sha256()
 hash_object.update(data)
 hex_dig = hash_object.hexdigest()
 # hexdigest() : 16진수로 변환한 값 리턴
 print(hex_dig)
 # 16진수로 변환된 값을 역으로 해석하기는 매우 어려움
-# 9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08 -> test : 매우 어렵다..
+# 9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08 -> junit : 매우 어렵다..

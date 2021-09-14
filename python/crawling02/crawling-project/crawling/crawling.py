@@ -12,7 +12,7 @@ separator = '$$$'
 
 # mongo
 mongo = MongoClient("")
-test = mongo['test']
+test = mongo['junit']
 bjh = test['bjh']
 
 
