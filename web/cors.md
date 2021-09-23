@@ -1,4 +1,4 @@
-# CORS
+# 교차 출처 리소스 공유 CORS (Cross-Origin Resource Sharing)
 다른 도메인으로부터 리소스가 요청될 경우 해당 리소스는 cross-origin HTTP 요청 에 의해 요청된다. 
 하지만 대부분의 브라우저들은 보안 상의 이유로 스크립트에서의 cross-origin HTTP 요청을 제한한다. 
 이것을 `Same-Origin-Policy(동일 근원 정책)`이라고 한다. 요청을 보내기 위해서는 요청을 보내고자 
