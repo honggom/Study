@@ -1,4 +1,6 @@
 # new String() vs "" 의 차이점
+![다운로드](https://user-images.githubusercontent.com/67107008/134624565-126fe554-db8e-4d77-b92d-92d905a11f5d.png)
+
 ## "" 리터럴 방식
 ```java
 String msg = "hong";
