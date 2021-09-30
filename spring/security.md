@@ -8,7 +8,7 @@
 
 ## Spring Security Structure
 스프링 시큐리티는 주로 서블릿 필터와 이들로 구성된 필터 체인을 사용한다. 우선은 소셜 로그인이 아닌 기본적인 폼 로그인을 할 경우의 구조를 살펴보자.
-![](../../security-aritchtecture.png)
+![security-aritchtecture](https://user-images.githubusercontent.com/67107008/135368722-55d0aad3-5310-448d-b818-96097c8ab452.png)
 
 1. 사용자가 로그인 정보와 함께 인증 요청 (HttpRequest)
 2. AuthenticationFilter가 요청을 가로챔. 이때 가로챈 정보를 통해 UsernamePasswordAuthenticationToken 객체 (사용자가 입력한 데이터를 기반으로 생성, 즉 현 상태는 미검증 Authentication) 생성
@@ -32,13 +32,13 @@ loadUserByUsername() 메서드가 반환하는 UserDetails 객체를 비교함�
 AbstractAuthenticationProcessingFilter이다. 사실 스프링 시큐리티는 
 AbstractAuthenticationProcessingFilter를 호출하고, 로그인 방식에 따라 
 구현체인 UsernamePasswordAuthenticationFilter 와 OAuth2LoginAuthenticationFilter 가 동작하는 방식이다.
-![](../../security-filters.png)
+![security-filters](https://user-images.githubusercontent.com/67107008/135368725-d24fc19b-48aa-4a34-b85b-f7a650aed51d.png)
 
 
 조금 더 상세히 메서드 및 부가적인 과정을 표현한 그림은 아래와 같다. 
 이 포스팅에서는 AuthenticationSuccessHandler, AuthenticationFailureHandler, 
 UserDetailsService, UserDetails, AuthenticationEntryPoint, AccessDeniedHandler 정도를 살펴보려 한다.
-![](../../security-filter-invocation.png)
+![security-filter-invocation](https://user-images.githubusercontent.com/67107008/135368727-b409a747-9d76-4dba-bc3c-0711ec8e6490.png)
 
 
 ## OAuth 2.0
