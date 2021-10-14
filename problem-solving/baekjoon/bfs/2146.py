@@ -5,10 +5,9 @@ input = sys.stdin.readline
 
 n = int(input())
 mtx = [list(map(int, input().split())) for _ in range(n)]
-pivot = -1
-
 dx = [1, -1, 0, 0]
 dy = [0, 0, 1, -1]
+pivot = -1
 result = sys.maxsize
 
 def dfs(i, j):
@@ -46,9 +45,11 @@ def bfs(q, cur):
 
                 rollback.append([nx, ny])
 
+        # 다른 섬을 찾았다면 while 탈출
         if find_another_map:
             break
 
+    # bfs로 탐색한 경로 다시 0으로 초기화 시키기
     for rb in rollback:
         mtx[rb[0]][rb[1]] = 0
 
