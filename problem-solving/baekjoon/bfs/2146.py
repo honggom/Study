@@ -49,7 +49,7 @@ def bfs(q, cur):
         if find_another_map:
             break
 
-    # bfs로 탐색한 경로 다시 0으로 초기화 시키기 
+    # bfs로 탐색한 경로 다시 0으로 초기화 시키기
     for rb in rollback:
         mtx[rb[0]][rb[1]] = 0
 
