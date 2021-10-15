@@ -19,5 +19,6 @@ for i in range(n - 1, -1, -1):
         dp[i] = dp[i + 1]
     else:
         dp[i] = max(dp[i + 1], ps[i] + dp[i + ts[i]])
+        # 상담을 안 하는 것 : dp[i + 1] // 상담을 하는 것 ps[i] + dp[i + ts[i]] 중 큰 값을 저장
 
 print(dp[0])
