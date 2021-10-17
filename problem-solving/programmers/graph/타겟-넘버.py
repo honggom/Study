@@ -1,8 +1,6 @@
 answer = 0
 
 def solution(numbers, target):
-    global answer
-
     def dfs(index, num):
         global answer
         if index == len(numbers):
