@@ -1,10 +1,10 @@
 import sys
 from collections import deque
-
+sys.setrecursionlimit(10 ** 7)
 input = sys.stdin.readline
 
-n = int(input()) # 행렬 수
-k = int(input()) # 사과 위치의 개수
+n = int(input())
+k = int(input())
 mtx = [[0] * n for _ in range(n)]
 snake = deque()
 snake.append([0, 0])
@@ -18,30 +18,32 @@ ls = deque()
 for _ in range(l):
     ls.append(input().split())
 
+# 순서대로 위쪽, 오른쪽, 아래쪽, 왼쪽
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
 d = 1
-nd = d % 4
 count = 0
 
 turn = ls.popleft()
 
 def move(x, y):
-    if x == n or x == -1 or y == n or y == -1:
-        return
+    global count, d, turn
     mtx[x][y] = 1
 
-    global count, d, turn
+    nd = d % 4
+    nx = x + dx[nd]
+    ny = y + dy[nd]
 
-    snake.append([x + dx[nd], y + dy[nd]])
+    if nx == n or nx == -1 or ny == n or ny == -1 or mtx[nx][ny] == 1:
+        return
 
-    mtx[x + dx[nd]][y + dy[nd]] = 1
+    snake.append([nx, ny])
 
-    if mtx[x + dx[nd]][y + dy[nd]] == -1:
-        mtx[x + dx[nd]][y + dy[nd]] = 1
+    if mtx[nx][ny] == -1:
+        mtx[nx][ny] = 1
     else:
-        mtx[x][y] = 0
-        snake.popleft()
+        tail = snake.popleft()
+        mtx[tail[0]][tail[1]] = 0
 
     count += 1
 
@@ -55,11 +57,11 @@ def move(x, y):
             if d == -1:
                 d = 3
 
-        if len(ls) > 1:
+        if len(ls) > 0:
             turn = ls.popleft()
 
-    next = snake[-1]
-    move(next[0], next[1])
+    head = snake[-1]
+    move(head[0], head[1])
 
 move(0, 0)
-print(count)
+print(count + 1)
