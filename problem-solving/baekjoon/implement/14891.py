@@ -1,55 +1,43 @@
-from collections import deque
-import sys
-input = sys.stdin.readline
-# 입력 1   0   1   0   1   1   1   1
-# 시간 12  1   3   5   6   7   9   11
-# idx 0  1    2   3   4   5   6   7
-# rotate(1) ==> 시계 방향
-# rotate(-1) ==> 반 시계
+import sys, collections
 
-r1 = deque(list(map(int, list(input().rstrip()))))
-r2 = deque(list(map(int, list(input().rstrip()))))
-r3 = deque(list(map(int, list(input().rstrip()))))
-r4 = deque(list(map(int, list(input().rstrip()))))
-r = [r1, r2, r3, r4]
-n = int(input())
-revers = {1 : -1, -1 : 1}
-checkd = [False] * 4
+s = []
+for _ in range(4):
+    s.append(collections.deque(list(input())))
 
-temp = []
+K = int(sys.stdin.readline())
+R = [list(map(int, sys.stdin.readline().split())) for _ in range(K)]
 
-def turn(target, direc, left, right):
-    if target < 0 or target > 3:
+def left(num, direction):
+    if num < 0:
         return
-    checkd[target] = True
-    temp.append([target, direc])
+    if s[num][2] != s[num + 1][6]:
+        left(num - 1, -direction)
+        s[num].rotate(direction)
 
-    if 0 < target < 3 and left != r[target - 1][2] and not checkd[target]:
-        turn(target - 1, revers[direc], r[target - 1][6], r[target - 1][2])
+def right(num, direction):
+    if num > 3:
+        return
+    if s[num][6] != s[num - 1][2]:
+        right(num + 1, -direction)
+        s[num].rotate(direction)
 
-    if 0 < target < 3 and right != r[target + 1][6] and not checkd[target]:
-        turn(target + 1, revers[direc], r[target - 1][6], r[target - 1][2])
+for i in range(K):
+    num = R[i][0] - 1
+    direction = R[i][1]
 
-for _ in range(n):
-    target, direc = map(int, input().split())
-    turn(target - 1, direc, r[target - 1][6], r[target - 1][2])
+    left(num - 1, -direction)
+    right(num + 1, -direction)
+    s[num].rotate(direction)
 
-    for t in temp:
-        r[t[0]].rotate(t[1])
+res = 0
 
-    temp.clear()
-    for i in range(4):
-        checkd[i] = False
+if s[0][0] == '1':
+    res += 1
+if s[1][0] == '1':
+    res += 2
+if s[2][0] == '1':
+    res += 4
+if s[3][0] == '1':
+    res += 8
 
-cnt = 0
-
-if r1[0] == 1:
-    cnt += 1
-if r2[0] == 1:
-    cnt += 2
-if r3[0] == 1:
-    cnt += 4
-if r4[0] == 1:
-    cnt += 8
-
-print(cnt)
+print(res)
