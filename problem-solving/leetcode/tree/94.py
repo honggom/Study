@@ -2,7 +2,7 @@
 # 94. Binary Tree Inorder Traversal
 
 class Solution:
-    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+    def inorderTraversal(self, root):
         result = []
 
         def inorder(node):
