@@ -4,4 +4,4 @@
 class Solution:
     def containsDuplicate(self, nums):
         seted = set(nums)
-        return len(seted) != len(nums)g
+        return len(seted) != len(nums)
