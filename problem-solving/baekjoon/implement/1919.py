@@ -3,15 +3,15 @@
 
 s1 = list(input())
 s2 = list(input())
-intersection = []
+intersection = 0
 count = 0
 
 for s in s1:
     if s in s2:
-        intersection.append(s)
+        intersection += 1
         s2[s2.index(s)] = '*'
 
-count += len(s1) - len(intersection)
-count += len(s2) - len(intersection)
+count += len(s1) - intersection
+count += len(s2) - intersection
 
 print(count)
