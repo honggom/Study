@@ -1,3 +1,6 @@
+# 골드 5
+# 5430. AC
+
 from sys import stdin
 from collections import deque
 input = stdin.readline
