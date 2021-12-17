@@ -25,6 +25,3 @@ for _ in range(t):
             left.append(c)
 
     print("".join(left) + "".join(reversed(right)))
-
-
-
