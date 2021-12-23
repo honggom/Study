@@ -13,7 +13,7 @@ for i in range(len(target)):
     stack.append(target[i])
     bomb_len = len(bomb)
 
-    if stack[-1] == bomb[-1] and len(stack) >= bomb_len and stack[-bomb_len:] == bomb:
+    if stack[-bomb_len:] == bomb:
         [stack.pop() for _ in range(bomb_len)]
 
 if stack:
