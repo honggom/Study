@@ -1,3 +1,6 @@
+# 실버 1
+# 14716. 현수막
+
 import sys
 sys.setrecursionlimit(10 ** 7)
 input = sys.stdin.readline
