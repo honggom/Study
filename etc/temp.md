@@ -33,6 +33,7 @@ public 접근 제어자를 가지고 있지 않다면 외부에서 이 클래스
 
 # Spring
 <img width="726" alt="스크린샷 2022-02-28 18 56 57" src="https://user-images.githubusercontent.com/67107008/155964689-7a82c1c1-34fb-4dcc-9145-438cb4f43809.png">
+
 1. 클라이언트의 모든 요청을 Dispatcher Servlet이라는 Servlet Class가 받는다. 
 2. Dispatcher Servlet(Front Controller)은 요청 URL을 Handler Mapping에게 전달하고, 현재 요청에 알맞는 Controller와 Method에 대한 정보를 알아낸다.
    - 어떤 요청에 어떤 Controller가 동작할지를 xml파일이나 Java파일의 어노테이션으로 설정한다.
