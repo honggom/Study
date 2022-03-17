@@ -1,0 +1,12 @@
+##### HTML Form 데이터 전송
+- HTML Form submit시 POST 전송
+  - ex) 회원 가입, 상품 주문, 데이터 변경
+- Content-Type: application/x-www-form-urlencoded 사용
+  - form의 내용을 메시지 바디를 통해서 전송 (key=value, 쿼리 파라미터 형식)
+  - 전송 데이터를 url encoding 처리
+    - ex) abc김 -> abc%EA%B9%80
+  - HTML Form은 GET 전송도 가능
+  - Content-Type: multipart/form-data
+    - 파일 업로드 같은 바이너리 데이터 전송시 사용
+    - 다른 종류의 여러 파일과 폼의 내용 함께 전송 가능 (그래서 이름이 multipart)
+  - 참고 : HTML Form 전송은 GET, POST 만 지원
