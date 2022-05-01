@@ -8,3 +8,4 @@
 6. null
 7. undefined
 8. NaN
+> Falsy 외의 모든 값은 모두 true로 평가되는 `Truthy` 값이다.
