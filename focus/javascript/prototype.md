@@ -32,3 +32,11 @@ console.log(Person.prototype === me.__proto__); // true
 
 > 생성된 프로토타입은 오직 constructor 프로퍼티만은 갖는 객체다. 프로토타입도 객체이고 모든 객체는 프로토타입을 가지므로 프로토타입도 자신의 프로토타입을
 > 갖는다. 생성된 프로토타입의 프로토타입은 Object.prototype이다.
+
+# 프로토타입 최상위
+> 프로토타입 체인의 최상위에 위치하는 객체는 언제나 Object.prototype이다. 따라서 모든 객체는 Object.prototype을 상속 받는다.
+> Object.prototype을 프로토타입 체인의 종점이라한다. Object.prototype의 프로로타입, 즉 [[Prototype]] 내부 슬롯의 값은 null이다.
+
+# 인스턴스에 의한 프로토타입의 교체
+> 생성자 함수의 prototype 프로퍼티에 다른 임의의 객체를 바인딩하는 것은 미래에 생성할 인스턴스의 프로토타입을 교체하는 것이다.
+> `__proto__` 접근자 프로퍼티를 통해 프로토타입을 교체하는 것은 이미 생성된 객체의 프로토타입을 교체하는 것이다.
