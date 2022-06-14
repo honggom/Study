@@ -10,4 +10,4 @@ export default {
 
 # Lifecycle Diagram
 모든 라이프사이클 훅은 this를 참조하기 때문 라이프사이클 훅을 화살표 함수로 작성하면 안 된다
-![](../../../lifecycle.16e4c08e.png)
+![](../../../../lifecycle.16e4c08e.png)
