@@ -9,7 +9,7 @@
   <div>
     접속중인 {{ mySiteName }} 사이트입니다.
     <br />
-    <child-component  :my-sitename.sync="mySitename" />
+    <child-component :my-sitename.sync="mySitename" />
   </div>
 </template>
 
@@ -58,3 +58,19 @@ this.$emit('update:prop이름', 변경할 값);
 
 이제 버튼을 클릭할 경우 update 함수가 동작하며 부모 컴포넌트에 적용된 
 mySitename의 값을 빈 값인 ''로 업데이트 하게된다.
+
+---
+
+# 사용 예
+
+```javascript
+<comp :foo.sync="bar"></comp>
+```
+위 코드는 아래와 같다.
+```javascript
+<comp :foo="bar" @update:foo="val => bar = val"></comp>
+```
+하위 컴포넌트가 foo를 갱신하려면 속성을 변경하는 대신 명시적으로 이벤트를 보내야한다.
+```javascript
+this.$emit('update:foo', newValue)
+```
